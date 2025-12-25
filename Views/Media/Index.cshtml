@@ -1,0 +1,34 @@
+﻿@model IEnumerable<vrmninkosesi.Models.Post>
+
+<h2 class="mb-4">Medya</h2>
+
+@if (!Model.Any())
+{
+    <p>Henüz medya eklenmiş bir yazı yok.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var post in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="custom-card">
+
+                    <img src="@post.ImagePath"
+                         class="img-fluid rounded mb-3"
+                         alt="@post.Title" />
+
+                    <h6>@post.Title</h6>
+
+                    <a asp-controller="Posts"
+                       asp-action="Details"
+                       asp-route-id="@post.Id">
+                        Yazıya git →
+                    </a>
+
+                </div>
+            </div>
+        }
+    </div>
+}
+

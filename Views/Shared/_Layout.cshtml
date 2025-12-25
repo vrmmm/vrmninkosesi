@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - VRM'nin Köşesi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Uygulama kapsayıcısı -->
+<div class="app-container">
+
+    <!-- SOL MENÜ -->
+    <aside id="sidebar-wrapper">
+
+        <!-- Sabit başlık -->
+        <div class="sidebar-heading">
+            VRM'nin Köşesi
+        </div>
+
+        <!-- Menü -->
+        <div class="list-group list-group-flush">
+            <a asp-controller="Posts"
+   asp-action="Index"
+   class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+    Yazılar
+</a>
+
+            <a asp-controller="Posts" asp-action="Create"
+               class="list-group-item list-group-item-action">
+                Yeni Yazı Ekle
+            </a>
+
+            <a asp-controller="Media" asp-action="Index"
+               class="list-group-item list-group-item-action">
+                Medya
+            </a>
+
+            <a asp-controller="Profile" asp-action="Index"
+               class="list-group-item list-group-item-action">
+                Profil Bilgileri
+            </a>
+        </div>
+    </aside>
+
+    <!-- SAĞ İÇERİK -->
+    <main id="page-content-wrapper">
+        @RenderBody()
+    </main>
+
+</div>
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,190 @@
+/* ===============================
+   RENK DEĞİŞKENLERİ
+================================ */
+:root {
+    --sidebar-dark: #272030; /* Sol menü */
+    --content-bg: #f4f6f8; /* Sayfa arka planı */
+    --accent: #c79a99; /* Vurgu (buton vb.) */
+    --text-dark: #3b0a0a; /* Ana metin */
+    --card-bg: #ffffff; /* Kartlar */
+}
+
+/* ===============================
+   GENEL AYARLAR
+================================ */
+body {
+    margin: 0;
+    background-color: var(--content-bg);
+    font-family: "Segoe UI", sans-serif;
+    color: var(--text-dark);
+}
+
+/* Linklerin mavi olmasını tamamen kır */
+a {
+    color: var(--sidebar-dark);
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* ===============================
+   ANA YAPI
+================================ */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===============================
+   SOL MENÜ
+================================ */
+#sidebar-wrapper {
+    width: 260px;
+    background-color: var(--sidebar-dark);
+    color: white;
+    padding: 2rem 1.5rem;
+}
+
+.sidebar-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+/* Menü linkleri */
+.list-group-item {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.75);
+    padding: 1rem 0;
+    transition: all 0.2s ease;
+}
+
+    .list-group-item:hover {
+        color: white;
+        padding-left: 6px;
+    }
+
+/* ===============================
+   İÇERİK ALANI
+================================ */
+#page-content-wrapper {
+    flex: 1;
+    padding: 3rem 4rem;
+    background-color: white;
+}
+
+/* ===============================
+   KARTLAR
+================================ */
+.custom-card {
+    background-color: var(--card-bg);
+    border-radius: 18px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+}
+
+/* ===============================
+   POST (YAZI) KARTLARI
+================================ */
+.post-card {
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+    .post-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .post-card h4 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .post-card p {
+        color: #333;
+        line-height: 1.6;
+    }
+
+/* ===============================
+   BUTONLAR
+================================ */
+.btn-primary {
+    background-color: var(--accent) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-outline-secondary,
+.btn-outline-danger {
+    border-radius: 12px;
+}
+
+/* Hover’lar daha yumuşak */
+a:hover,
+button:hover {
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 20px;
+}
+
+/* ===============================
+   PROFİL SAYFASI
+================================ */
+
+/* Profil fotoğrafı */
+.profile-photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--sidebar-dark);
+}
+
+/* Profil başlığı */
+.profile-title {
+    color: var(--sidebar-dark);
+    font-weight: 700;
+}
+
+/* Bölüm başlıkları */
+.section-title {
+    color: var(--sidebar-dark);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Yazı listesi */
+.profile-post-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+    .profile-post-list li {
+        margin-bottom: 6px;
+    }
+
+    /* Yazı ve sosyal linkler */
+    .profile-post-list a,
+    .social-links a {
+        color: var(--sidebar-dark);
+        font-weight: 500;
+    }
+
+        .profile-post-list a:hover,
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+/* Sosyal medya */
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}

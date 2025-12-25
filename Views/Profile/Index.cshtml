@@ -1,0 +1,49 @@
+﻿@model vrmninkosesi.Models.AdminProfileViewModel
+
+<div class="d-flex align-items-center mb-4">
+
+    <!-- Profil Foto -->
+    <img src="@Model.ProfileImagePath"
+         class="profile-photo me-4"
+         alt="Evrim Avcı" />
+
+    <!-- İsim -->
+    <h2 class="profile-title m-0">
+        Evrim Avcı
+    </h2>
+
+</div>
+
+<p class="mb-4">
+    @Model.AboutMe
+</p>
+
+<hr />
+
+<h4 class="section-title">Yayınladığım Yazılar</h4>
+
+<ul class="profile-post-list">
+    @foreach (var post in Model.Posts)
+    {
+        <li>
+            <a asp-controller="Posts"
+               asp-action="Details"
+               asp-route-id="@post.Id">
+                @post.Title
+            </a>
+        </li>
+    }
+</ul>
+
+<hr />
+
+<h4 class="section-title">Sosyal Medya</h4>
+
+<div class="social-links">
+    <a href="https://www.instagram.com/evrm.avci" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/in/evrim-avcı-08b020340" target="_blank">LinkedIn</a>
+    <a href="https://github.com/vrmmm" target="_blank">GitHub</a>
+</div>
+
+
+

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<vrmninkosesi.Models.Post>
+
+<h2>Yazılar</h2>
+
+@foreach (var post in Model)
+{
+    <div class="post-card mb-4"
+         style="background-image:
+                    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+                    url('@post.ImagePath');">
+
+        <h4>@post.Title</h4>
+
+        <p>
+            @{
+                var previewLength = 200;
+                var text = post.Content ?? "";
+                var preview = text.Length > previewLength
+                ? text.Substring(0, previewLength) + "..."
+                : text;
+            }
+            @preview
+        </p>
+
+        <!-- OKUMA BUTONU -->
+        <a asp-action="Details"
+           asp-route-id="@post.Id"
+           class="btn btn-sm btn-outline-dark">
+            Devamını oku →
+        </a>
+
+        <!-- YÖNETİM BUTONLARI -->
+        <div class="mt-2">
+            <a asp-action="Edit"
+               asp-route-id="@post.Id"
+               class="btn btn-sm btn-outline-secondary">
+                Güncelle
+            </a>
+
+            <a asp-action="Delete"
+               asp-route-id="@post.Id"
+               class="btn btn-sm btn-outline-danger ms-2">
+                Sil
+            </a>
+        </div>
+    </div>
+}
+
+
+
