@@ -46,5 +46,3 @@ Uygulama; hikâye ve şiir ağırlıklı yazıların yayınlanmasını, görsel 
 
 ---
 
-## 🗂 Proje Yapısı
-
